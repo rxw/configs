@@ -13,6 +13,7 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
@@ -43,6 +44,9 @@ map <Leader>f :NERDTreeFind<CR>
 
 map <Leader>h :tabp<CR>
 map <Leader>l :tabn<CR>
+
+" Run python scripts
+map <Leader>r :w !python<cr>
 
 " Reduce timeout after <ESC> is recvd. This is only a good idea on fast links.
 set ttimeout
