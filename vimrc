@@ -8,7 +8,8 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
+" Obtain bundle first git clone https://github.com/gmarik/Vundle.vim.git
+" ~/.vim/bundle/Vundle.vim
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
