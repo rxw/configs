@@ -1,7 +1,9 @@
+"
+" ╻ ╻╻┏┳┓┏━┓┏━╸   ┏━╸╻╻  ┏━╸
+" ┃┏┛┃┃┃┃┣┳┛┃     ┣╸ ┃┃  ┣╸
+" ┗┛ ╹╹ ╹╹┗╸┗━╸   ╹  ╹┗━╸┗━╸
+"                       -- by tato
 set shell=/bin/bash
-" use old regext engine. speed up ruby syntax highlighting
-set re=1
-set clipboard=xclip
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -15,22 +17,19 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rking/ag.vim'
 
 call vundle#end()
 filetype plugin indent on
 set background=light
-colorscheme candyman
- 
+colorscheme molokai
 set ttyfast
 set lazyredraw
 
 let $PATH='/usr/local/bin:' . $PATH
-let g:syntastic_python_python_exec = '/usr/bin/python2'
+let g:syntastic_python_python_exec = '/usr/bin/python3'
 
 :au FocusLost * :wa "Save on focus lost
-
-" Sessions
-let g:session_autoload = 'yes'
 
 " Leader Mappings
 let mapleader = "\<Space>"
@@ -47,7 +46,7 @@ map <Leader>h :tabp<CR>
 map <Leader>l :tabn<CR>
 
 " Run python scripts
-map <Leader>r :w !python<cr>
+map <Leader>c :w !python<cr>
 
 " Reduce timeout after <ESC> is recvd. This is only a good idea on fast links.
 set ttimeout
@@ -122,7 +121,6 @@ set shiftwidth=2
 set expandtab
 
 let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
-let g:rspec_runner = "os_x_iterm"
 
 " Airline
 let g:airline_powerline_fonts = 1
