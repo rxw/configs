@@ -1,11 +1,31 @@
-cowsay $(fortune)
-alias tatosay='cowsay -f me'
-export PS1=" \W \[\e[34m\]λ\[\e[m\] "
+#    _/                            _/       
+#   _/_/_/      _/_/_/    _/_/_/  _/_/_/    
+#  _/    _/  _/    _/  _/_/      _/    _/   
+# _/    _/  _/    _/      _/_/  _/    _/    
+#_/_/_/      _/_/_/  _/_/_/    _/    _/ rc
+
+## Functions
+toxrdb() {
+  CPT=0
+  while read HEXCODE; do
+    printf '*color%d: %s\n' "$CPT" "$HEXCODE"
+    CPT=$(expr $CPT + 1)
+  done | column -t
+}
+
+## Exports
+export PS1=" \[\e[37m\]\W\[\e[m\] ━━━━ "
 export PATH=$PATH:~/bin/
 export XDG_DESKTOP_DIR="/home/tato"
-alias hax0r='cmatrix -b'
+
+## Commands
+#cowsay $(fortune)
+ufetch
+wmname LG3D #Java applications
+
+## Aliases
 alias I='sudo pacman -S'
-#alias ls='ls --color=auto'
+alias ls='ls --color=auto'
 alias S='pacman -Ss'
 alias aur='pacaur -S'
 alias aurs='pacaur -Ss'
