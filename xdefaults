@@ -1,0 +1,28 @@
+*scrollBar: false
+URxvt*font: xft:Monaco for Powerline:pixelsize=14
+URxvt*fontBold: xft:Monaco for Powerline:pixelsize=14:style=bold
+*letterSpace: -1
+*geometry: 70x32
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: false
+URxvt.perl-ext-common: default,clipboard
+
+*color1:#0b020a
+*color2:#161017
+*color3:#261c24
+*color4:#322b2c
+*color5:#3e3639
+*color6:#4e5c2d
+*color7:#4c4548
+*color8:#788444
+*color9:#5e5852
+*color10:#716763
+*color11:#877c73
+*color12:#9e9280
+*color13:#b4a495
+*color14:#cbb7a5
+*color15:#e0c9b5
+*color16:#f5ddc7
+
+*background:#161017
+*foreground:#e0c9b5
