@@ -1,0 +1,17 @@
+#!/bin/bash
+
+bspc monitor -d I II III IV V VI VII VIII IX X
+
+for desktop in $(bspc query -D); do
+  bspc config -d $desktop border_width 8
+  bspc config -d $desktop window_gap 20
+  bspc config -d $desktop focused_border_color "#fffFFF"
+done
+
+bspc config top_padding 70
+bspc config right_padding 50
+
+bspc config left_padding 50
+bspc config bottom_padding 50
+
+bspc config focus_follows_pointer true

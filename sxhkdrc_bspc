@@ -1,0 +1,56 @@
+#!/bin/bash
+
+@XF86LaunchA
+    scrot -s -e 'image_viewer $f'
+
+super + shift + {comma,period}
+  bspc window -m {left,right}
+
+super + {comma,period}
+  bspc monitor -f {left,right}
+
+super + Tab
+  bspc window -f next
+
+super + ctrl + {h,j,k,l}
+    bspc window -s {left,down,up,right}
+
+super + shift + {h,j,k,l}
+    bspc window -e {left -20,down +20,down -20,left +20}
+
+super + q
+    bspc window -c
+
+super + Return
+  urxvt
+
+ctrl + super + {w,d,a}
+  mpc {toggle, next, prev}
+
+super + r
+  sh ~/bin/runprompt.sh
+
+XF86AudioRaiseVolume
+  sh ~/bin/volup.sh
+
+XF86AudioLowerVolume
+  sh ~/bin/voldown.sh
+
+{button8,button9}
+    amixer set Master 5%{-,+}
+
+XF86AudioMute
+  amixer set Master toggle
+
+XF86MonBrightnessUp
+  xbacklight -inc 10
+
+XF86MonBrightnessDown
+  xbacklight -dec 10
+
+ctrl + super + c
+  firefox
+
+ctrl + super + v
+  pavucontrol
+
