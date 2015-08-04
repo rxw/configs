@@ -10,9 +10,11 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" Obtain bundle first git clone https://github.com/gmarik/Vundle.vim.git
-" ~/.vim/bundle/Vundle.vim
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Obtain bundle first git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" A pretty statusline, bufferline integration
+Plugin 'itchyny/lightline.vim'
+Plugin 'bling/vim-bufferline'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
