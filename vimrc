@@ -44,8 +44,8 @@ map <Leader>n :NERDTreeToggle<CR>
 " Current file in nerdtree
 map <Leader>f :NERDTreeFind<CR>
 
-map <Leader>h :tabp<CR>
-map <Leader>l :tabn<CR>
+map <Leader>h :bp<CR>
+map <Leader>l :bn<CR>
 
 " Run python scripts
 map <Leader>c :w !python<cr>
