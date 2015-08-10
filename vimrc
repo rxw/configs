@@ -19,7 +19,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'rking/ag.vim'
+Plugin 'junegunn/fzf'
 
 call vundle#end()
 filetype plugin indent on
@@ -29,7 +29,7 @@ set ttyfast
 set lazyredraw
 
 let $PATH='/usr/local/bin:' . $PATH
-let g:syntastic_python_python_exec = '/usr/bin/python3'
+let g:syntastic_python_python_exec = '/usr/bin/python2'
 
 :au FocusLost * :wa "Save on focus lost
 
@@ -82,7 +82,7 @@ set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 
 " Fuzzy finder: ignore stuff that can't be opened, and generated files
-let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
+let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif"
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
