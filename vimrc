@@ -18,7 +18,7 @@ Plugin 'bling/vim-bufferline'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'junegunn/fzf'
 
 call vundle#end()
@@ -37,12 +37,12 @@ let g:syntastic_python_python_exec = '/usr/bin/python2'
 let mapleader = "\<Space>"
 map <Leader>w :update<CR>
 map <Leader>q :qall<CR>
-map <Leader>e :q<CR>
+map <Leader>e :bd<CR>
 
 " Toggle nerdtree with F10
 map <Leader>n :NERDTreeToggle<CR>
 " Current file in nerdtree
-map <Leader>f :NERDTreeFind<CR>
+map <Leader>f :FZF<CR> 
 
 map <Leader>h :bp<CR>
 map <Leader>l :bn<CR>
