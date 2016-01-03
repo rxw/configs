@@ -1,10 +1,11 @@
-feh --bg-fill $HOME/usr/pictures/bg.png
+#!/bin/bash
+
 compton --config /home/tato/.compton.conf &
-xbindkeys &
 xsetroot -cursor_name left_ptr &
-./bin/bar.sh &
-./bin/mountem.sh &
-#./bin/cover.sh &
+xrdb ~/.Xresources &
 wmname LG3D &
-urxvt &
-exec xfce4-session
+feh --bg-fill usr/img/wps/wp.png &
+sxhkd -c ~/.sxhkdrc_bspc &
+sh ~/bin/bar.sh &
+exec 2bwm
+# None
