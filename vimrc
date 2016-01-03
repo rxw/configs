@@ -215,5 +215,3 @@ nnoremap <C-H> <C-W><C-H>
 " Set relative number but real number in current line
 set number
 set relativenumber
-
-nnoremap <C-n> :call NumberToggle()<cr>

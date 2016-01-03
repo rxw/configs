@@ -1,0 +1,183 @@
+servers = (
+  {
+    address = "irc.freenode.net";
+    chatnet = "fnode";
+    port = "6697";
+    use_ssl = "yes";
+    autoconnect = "no";
+  },
+  {
+    address = "irc.iotek.org";
+    chatnet = "iotek";
+    port = "6697";
+    use_ssl = "yes";
+    autoconnect = "yes";
+  }
+);
+
+chatnets = {
+  fnode = { nick = "t4to"; type = "IRC"; };
+  iotek = { type = "IRC"; };
+};
+
+channels = (
+  { name = "#nixers"; chatnet = "iotek"; autojoin = "Yes"; },
+  { name = "#iotek"; chatnet = "iotek"; autojoin = "No"; }
+);
+
+aliases = {
+  J = "join";
+  WJOIN = "join -window";
+  WQUERY = "query -window";
+  P = "part";
+  DESCRIBE = "action";
+  DATE = "time";
+  HOST = "userhost";
+  LAST = "lastlog";
+  SAY = "msg *";
+  WI = "whois";
+  WII = "whois $0 $0";
+  WW = "whowas";
+  W = "window";
+  N = "names";
+  M = "msg";
+  T = "topic";
+  C = "clear";
+  K = "kick";
+  KB = "kickban";
+  KN = "knockout";
+  BANS = "ban";
+  B = "ban";
+  MUB = "unban *";
+  UB = "unban";
+  IG = "ignore";
+  UNIG = "unignore";
+  SB = "scrollback";
+  SH = "exec -";
+  UMODE = "mode $N";
+  WC = "window close";
+  WN = "window name";
+  WS = "window show";
+  WK = "window stick";
+  WM = "window move";
+  WG = "window grow";
+  WL = "window list";
+  SV = "say Irssi $J ($V) - http://irssi.org/";
+  GOTO = "sb goto";
+  CHAT = "dcc chat";
+  RUN = "SCRIPT LOAD";
+  SBAR = "STATUSBAR";
+  INVITELIST = "mode $C +I";
+  Q = "QUIT";
+  QU = "QUERY";
+  UQ = "UNQUERY";
+  HL = "lastlog -hilight -new";
+  OP = "msg ChanServ OP $C";
+  DEOP = "msg ChanServ DEOP $C";
+  TWSS = "say THAT'S WHAT SHE SAID";
+};
+
+keyboard = (
+  { key = "meta-Q"; id = "change_window"; data = "11"; },
+  { key = "meta-W"; id = "change_window"; data = "12"; },
+  { key = "meta-E"; id = "change_window"; data = "13"; },
+  { key = "meta-R"; id = "change_window"; data = "14"; },
+  { key = "meta-T"; id = "change_window"; data = "15"; }
+);
+
+statusbar = {
+  default = {
+    # the "default statusbar" to be displayed at the bottom of the window.
+    # contains all the normal items.
+    window = { disabled = "yes"; };
+    topic = { visible = "inactive"; disabled = "yes"; };
+
+    # leave an empty line before the prompt
+    empty_line_top = { placement = "top"; position = "100"; };
+
+    # we treat input line as yet another statusbar :) It's possible to
+    # add other items before or after the input line item.
+    prompt = {
+      type = "root";
+      placement = "bottom";
+      position = "100";
+      visible = "always";
+      items = {
+        prompt = { priority = "-1"; };
+        prompt_empty = { priority = "-1"; };
+        input = { priority = "0"; };
+      };
+    };
+
+    #awl_1 = { placement = "top"; items = { barstart = { priority = "100"; }; awl_1 = { }; barend = { priority = "100"; alignment = "right"; }; }; };
+    awl_0 = {
+      placement = "top";
+      items = {
+        barstart = { priority = "100"; };
+        awl_0 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+  };
+};
+
+settings = {
+  core = {
+    real_name = "tato";
+    user_name = "tato";
+    nick = "tato";
+    timestamp_format = "%H:%M (%d/%m)";
+    quit_message = "kill -s TERM $(pidof tato)";
+  };
+
+  "fe-text" = {
+    scrollback_time = "48h";
+    actlist_sort = "refnum";
+    indent = "8";
+  };
+
+  "fe-common/core" = {
+    autolog = "yes";
+    autolog_path = "~/var/log/irc/%Y/$tag/$0.%m-%d.log";
+    theme = "default";
+    bell_beeps = "yes";
+    beep_msg_level = "MSGS NOTICES INVITES DCC DCCMSGS HILIGHT";
+    use_status_window = "yes";
+    expand_escapes = "yes";
+    timestamp_level = "MSGS HILIGHT";
+    timestamp_timeout = "900";
+    completion_char = ",";
+  };
+  "perl/core/scripts" = {
+    awl_display_key = "%K$H$C$S";
+    awl_display_key_active = "%W$H$C$S%n";
+    # awl_sort             = "refnum";
+    # awl_hide_data        = "0";
+    awl_placement = "top";
+    awl_block = "";
+    awl_columns = "1";
+    awl_height_adjust = "2";
+    awl_maxlines = "1";
+    awl_prefer_name = "on";
+  };
+  "irc/core" = {
+    ctcp_version_reply = "And what do we say to CTCP VERSION ? NOT. TODAY.";
+  };
+};
+
+hilights = ( { text = "tato"; nick = "yes"; word = "yes"; } );
+
+windows = {
+  3 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#nixers";
+        tag = "nixers";
+      }
+    );
+  };
+};
+
+logs = { };
