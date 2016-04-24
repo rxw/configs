@@ -10,15 +10,14 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" Obtain bundle first git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 " A pretty statusline, bufferline integration
 Plugin 'itchyny/lightline.vim'
 Plugin 'bling/vim-bufferline'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'junegunn/fzf'
 
 call vundle#end()
@@ -37,18 +36,18 @@ let g:syntastic_python_python_exec = '/usr/bin/python2'
 let mapleader = "\<Space>"
 map <Leader>w :update<CR>
 map <Leader>q :qall<CR>
-map <Leader>e :bd<CR>
+map <Leader>e :bdel<CR>
 
-" Toggle nerdtree with F10
+" Toggle nerdtree with n
 map <Leader>n :NERDTreeToggle<CR>
 " Current file in nerdtree
-map <Leader>f :FZF<CR> 
+map <Leader>f :NERDTreeFind<CR>
 
 map <Leader>h :bp<CR>
 map <Leader>l :bn<CR>
 
-" Run python scripts
-map <Leader>c :w !python<cr>
+" Run selection with bash
+map <Leader>c y:e ~/tmp/clipboard.tmp<cr>p:w !bash<cr>:bdelete!<cr>
 
 " Reduce timeout after <ESC> is recvd. This is only a good idea on fast links.
 set ttimeout
@@ -215,3 +214,5 @@ nnoremap <C-H> <C-W><C-H>
 " Set relative number but real number in current line
 set number
 set relativenumber
+
+nnoremap <C-n> :call NumberToggle()<cr>
