@@ -18,13 +18,17 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'junegunn/fzf'
+Plugin 'dylanaraps/wal.vim'
 
 call vundle#end()
+
+colorscheme wal
+
 filetype plugin indent on
 set background=light
-colorscheme apprentice
 set ttyfast
 set lazyredraw
+syntax on
 
 let $PATH='/usr/local/bin:' . $PATH
 let g:syntastic_python_python_exec = '/usr/bin/python2'
@@ -55,11 +59,6 @@ set notimeout
 
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
-
-" highlight vertical column of cursor
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline
-set cursorline
 
 "key to insert mode with paste using F2 key
 map <Leader>p :set paste<CR>i
