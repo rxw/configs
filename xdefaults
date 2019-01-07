@@ -1,7 +1,8 @@
 *scrollBar: false
 URxvt*font: *-proggycleancp-medium-*-*-*-13-*-*-*-*-*-*-*
 URxvt*fontBold: *-proggycleancp-medium-*-*-*-13-*-*-*-*-*-*-*
-*geometry: 70x32
+*geometry: 80x32
+URxvt.internalBorder: 20
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.iso14755: false
