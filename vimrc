@@ -15,14 +15,13 @@ call vundle#begin()
 Plugin 'itchyny/lightline.vim'
 Plugin 'bling/vim-bufferline'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'junegunn/fzf'
 Plugin 'dylanaraps/wal.vim'
 
 call vundle#end()
 
-colorscheme wal
+colorscheme dracula
 
 filetype plugin indent on
 set background=light
@@ -31,7 +30,6 @@ set lazyredraw
 syntax on
 
 let $PATH='/usr/local/bin:' . $PATH
-let g:syntastic_python_python_exec = '/usr/bin/python2'
 
 :au FocusLost * :wa "Save on focus lost
 
@@ -40,11 +38,6 @@ let mapleader = "\<Space>"
 map <Leader>w :update<CR>
 map <Leader>q :qall<CR>
 map <Leader>e :bdel<CR>
-
-" Toggle nerdtree with n
-map <Leader>n :NERDTreeToggle<CR>
-" Current file in nerdtree
-map <Leader>f :NERDTreeFind<CR>
 
 map <Leader>h :bp<CR>
 map <Leader>l :bn<CR>
