@@ -3,7 +3,7 @@
 " ┃┏┛┃┃┃┃┣┳┛┃     ┣╸ ┃┃  ┣╸
 " ┗┛ ╹╹ ╹╹┗╸┗━╸   ╹  ╹┗━╸┗━╸
 "                       -- by tato
-set shell=/bin/bash
+set shell=/bin/fish
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -21,13 +21,14 @@ Plugin 'dylanaraps/wal.vim'
 
 call vundle#end()
 
-colorscheme dracula
 
 filetype plugin indent on
 set background=light
 set ttyfast
 set lazyredraw
 syntax on
+
+colorscheme northland
 
 let $PATH='/usr/local/bin:' . $PATH
 
