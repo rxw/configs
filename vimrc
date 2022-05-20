@@ -11,28 +11,29 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" A pretty statusline, bufferline integration
+Plugin 'gmarik/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
-Plugin 'bling/vim-bufferline'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/syntastic'
 Plugin 'junegunn/fzf'
 Plugin 'dylanaraps/wal.vim'
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
 
 
 filetype plugin indent on
-set background=light
+set background=dark
 set ttyfast
 set lazyredraw
 syntax on
 
-colorscheme northland
+colorscheme nord
 
-let $PATH='/usr/local/bin:' . $PATH
-
-:au FocusLost * :wa "Save on focus lost
+" Light line configuration
+let g:lightline = {
+	\ 'colorscheme': 'seoul256',
+	\ }
 
 " Leader Mappings
 let mapleader = "\<Space>"
@@ -42,9 +43,6 @@ map <Leader>e :bdel<CR>
 
 map <Leader>h :bp<CR>
 map <Leader>l :bn<CR>
-
-" Run selection with bash
-map <Leader>c y:e ~/tmp/clipboard.tmp<cr>p:w !bash<cr>:bdelete!<cr>
 
 " Reduce timeout after <ESC> is recvd. This is only a good idea on fast links.
 set ttimeout

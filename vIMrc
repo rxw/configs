@@ -1,0 +1,65 @@
+"
+"            █                 
+"            ▀                 
+"     ▐▙ ▟▌ ██  ▐█▙█▖ █▟█▌ ▟██▖
+"      █ █   █  ▐▌█▐▌ █▘  ▐▛  ▘
+"      ▜▄▛   █  ▐▌█▐▌ █   ▐▌   
+"  █   ▐█▌ ▗▄█▄▖▐▌█▐▌ █   ▝█▄▄▌
+"  ▀    ▀  ▝▀▀▀▘▝▘▀▝▘ ▀    ▝▀▀ 
+"
+"                              - by rxw
+
+call plug#begin()
+
+Plug 'tpope/vim-sensible' " Sensible defaults for VIM
+Plug 'dag/vim-fish' " Fish script highlighting
+Plug 'vim-airline/vim-airline' " Better status bar
+Plug 'flazz/vim-colorschemes' " Bunch of colorschemes
+Plug 'vim-airline/vim-airline-themes' " Themes for airline
+Plug 'tpope/vim-fugitive' " Git plugin
+
+" Bunch of plugins for JS and TS
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'jparise/vim-graphql'
+
+" Completion !
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+  \ ]
+
+call plug#end()
+
+" Set the colorscheme
+colorscheme monokai-phoenix
+let g:airline_theme = "papercolor"
+
+" Show existing tab with 2 spaces width
+set tabstop=2
+" When indenting with '>', use 2 spaces width
+set shiftwidth=2
+" On pressing tab, insert 2 spaces
+set expandtab
+
+" Do not check whitespace on status bar
+let g:airline#extensions#whitespace#enabled = 0
+
+" Set leader key to space bar
+let mapleader = "\<Space>"
+
+" Use leader h,l to go between buffers
+map <Leader>h :bp<CR>
+map <Leader>l :bn<CR>
+
+" Easy navigation between splits. Instead of ctrl-w + j. Just ctrl-j
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Set relative number but real number in current line
+set number
+set relativenumber
