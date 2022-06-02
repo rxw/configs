@@ -2,7 +2,7 @@ super + Tab
   sh ~/wm/focus.sh next
 
 super + q
-  killw $(pfw) && sh ~/wm/focus.sh next
+  ~/wm/killwa/killwa $(pfw)
 
 super + ctrl + shift + {h,l,j,k} 
   wrs {-5 0, 5 0, 0 5, 0 -5 } $(pfw)
@@ -27,8 +27,8 @@ super + {g,b,n,y,u}
 
 # add window to a group
 super + shift + {1,2,3,4,5}
-    sh ~/wm/groups.sh -c $(pfw); \
-    sh ~/wm/groups.sh -s $(pfw) {1,2,3,4,5}
+  sh ~/wm/groups.sh -c $(pfw); \
+  sh ~/wm/groups.sh -s $(pfw) {1,2,3,4,5}
 
 # toggle all groups' visibility
 super + {6,7}
@@ -36,19 +36,19 @@ super + {6,7}
 
 # toggle groups' visibility
 super + {1,2,3,4,5}
-    sh ~/wm/groups.sh -t {1,2,3,4,5}
+  sh ~/wm/groups.sh -t {1,2,3,4,5}
 
 super + !button1
-    wmv -a %i %i $(pfw)
+  wmv -a %i %i $(pfw)
 
 super + shift + !button1
-    wrs -a %i %i $(pfw)
+  wrs -a %i %i $(pfw)
 
 super + {Left,Down,Up,Right}
-      sh ~/wm/closest.sh {left,down,up,right}
+  sh ~/wm/closest.sh {left,down,up,right}
 
 super + Return
-  urxvt
+  konsole
 
 super + ctrl + q
   killall sxhkd sh
@@ -58,6 +58,9 @@ ctrl + shift + {Up, Right, Left}
 
 super + r
   sh ~/bin/runprompt.sh
+
+{button8, button9}
+  amixer set Master 5%{-,+}
 
 XF86AudioRaiseVolume
   sh ~/bin/volup.sh
